@@ -1,0 +1,28 @@
+#!/bin/bash
+
+RUN_DIR=/var/vcap/sys/run/tmux
+LOG_DIR=/var/vcap/sys/log/tmux
+PIDFILE=${RUN_DIR}/pid
+
+case $1 in
+
+  start)
+    mkdir -p ${RUN_DIR} ${LOG_DIR}
+    chown -R vcap:vcap ${RUN_DIR} ${LOG_DIR}
+
+    echo $$ > ${PIDFILE}
+    exec /var/vcap/packages/tmux
+
+    ;;
+
+  stop)
+    kill -9 $(cat ${PIDFILE})
+    rm -f ${PIDFILE}
+
+    ;;
+
+  *)
+    echo "Usage: ctl {start|stop}" ;;
+
+esac
+

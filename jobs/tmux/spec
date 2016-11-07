@@ -1,5 +1,7 @@
 ---
 name: tmux
 templates:
+  ctl.erb: bin/ctl
 
 packages:
+  tmux

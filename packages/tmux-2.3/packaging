@@ -1,0 +1,11 @@
+# abort script on any command that exits with a non zero value
+set -e -x
+
+tar xzf tmux-2.3.tar.gz
+
+pushd tmux-2.3
+  export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
+  ./configure CFLAGS="-I/usr/local/include" LDFLAGS="-L/usr/local/lib"
+  make
+  cp tmux ${BOSH_INSTALL_TARGET}/bin/
+popd

@@ -1,0 +1,7 @@
+---
+name: libevent-2.0.22
+
+dependencies: []
+
+files:
+- libevent-2.0.22/libevent-2.0.22.tar.gz

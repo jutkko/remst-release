@@ -19,3 +19,14 @@ instance_groups:
   - eu-west-1a
   networks:
   - name: services
+
+stemcells:
+- alias: trusty
+  os: ubuntu-trusty
+  version: latest
+
+update:
+  canaries: 1
+  max_in_flight: 1
+  canary_watch_time: 1000-30000
+  update_watch_time: 1000-30000

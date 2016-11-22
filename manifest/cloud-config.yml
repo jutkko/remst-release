@@ -1,0 +1,34 @@
+---
+networks:
+- name: compilation
+  type: manual
+  subnets:
+  - range: 10.244.2.0/24
+    gateway: 10.244.2.1
+    az: eu-west-1a
+- name: services
+  type: manual
+  subnets:
+  - range: 10.244.1.0/24
+    gateway: 10.244.1.1
+    az: eu-west-1a
+
+azs:
+- name: eu-west-1a
+
+vm_types:
+- name: m3.medium
+- name: r3.large
+
+disk_types:
+- name: 2GB
+  disk_size: 2_000
+- name: 10GB
+  disk_size: 10_000
+
+compilation:
+  workers: 1
+  reuse_compilation_vms: true
+  network: compilation
+  az: eu-west-1a
+  vm_type: r3.large

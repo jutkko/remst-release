@@ -11,7 +11,7 @@ case $1 in
     chown -R vcap:vcap ${RUN_DIR} ${LOG_DIR}
 
     echo $$ > ${PIDFILE}
-    exec /var/vcap/packages/tmux
+    exec /var/vcap/packages/tmux-2.3/bin/tmux
 
     ;;
 

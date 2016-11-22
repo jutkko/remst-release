@@ -1,0 +1,21 @@
+---
+name: remst
+director_uuid: 11111111111111111111111111
+
+releases:
+  - name: remst
+    version: latest
+
+instance_groups:
+- name: tmux
+  instances: 1
+  jobs:
+  - name: tmux
+    release: remst
+  vm_type: r3.large
+  stemcell: trusty
+  persistent_disk_type: 10GB
+  azs:
+  - eu-west-1a
+  networks:
+  - name: services

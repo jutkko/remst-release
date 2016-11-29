@@ -1,4 +1,4 @@
-check proces tmux
+check process tmux
   with pidfile /var/vcap/sys/run/tmux/pid
   start program "/var/vcap/jobs/tmux/bin/ctl start"
   stop program "/var/vcap/jobs/tmux/bin/ctl stop"

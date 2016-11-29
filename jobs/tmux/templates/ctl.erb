@@ -10,8 +10,9 @@ case $1 in
     mkdir -p ${RUN_DIR} ${LOG_DIR}
     chown -R vcap:vcap ${RUN_DIR} ${LOG_DIR}
 
-    echo $$ > ${PIDFILE}
-    exec /var/vcap/packages/tmux-2.3/bin/tmux
+    export PATH=$PATH:/var/vcap/packages/tmux-2.3/bin
+    tmux new -d -s remst
+    echo $(pidof tmux) > ${PIDFILE}
 
     ;;
 

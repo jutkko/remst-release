@@ -1,6 +1,13 @@
 # abort script on any command that exits with a non zero value
 set -e -x
 
+tar xzf libevent-2.0.22-stable/libevent-2.0.22-stable.tar.gz
+
+pushd libevent-2.0.22-stable
+  ./configure --prefix=/usr/local && make
+  make install
+popd
+
 mkdir -p ${BOSH_INSTALL_TARGET}/bin
 
 tar xzf tmux-2.3/tmux-2.3.tar.gz

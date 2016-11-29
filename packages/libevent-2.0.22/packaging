@@ -1,9 +1,0 @@
-# abort script on any command that exits with a non zero value
-set -e
-
-tar xzf libevent-2.0.22-stable/libevent-2.0.22-stable.tar.gz
-
-pushd libevent-2.0.22-stable
-  ./configure --prefix=/usr/local && make
-  make install
-popd

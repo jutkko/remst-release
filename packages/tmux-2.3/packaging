@@ -4,17 +4,18 @@ set -e -x
 tar xzf libevent-2.0.22-stable/libevent-2.0.22-stable.tar.gz
 
 pushd libevent-2.0.22-stable
-  ./configure --prefix=/usr/local && make
+  ./configure --prefix=${PWD}/libevent && make
   make install
+  cp -R libevent/bin ${BOSH_INSTALL_TARGET}/bin
+  cp -R libevent/include ${BOSH_INSTALL_TARGET}/include
+  cp -R libevent/lib ${BOSH_INSTALL_TARGET}/lib
 popd
-
-mkdir -p ${BOSH_INSTALL_TARGET}/bin
 
 tar xzf tmux-2.3/tmux-2.3.tar.gz
 
 pushd tmux-2.3
-  export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
-  ./configure CFLAGS="-I/usr/local/include" LDFLAGS="-L/usr/local/lib"
+  export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${BOSH_INSTALL_TARGET}/lib"
+  ./configure CFLAGS="-I/${BOSH_INSTALL_TARGET}/include" LDFLAGS="-L/${BOSH_INSTALL_TARGET}/lib"
   make
   cp tmux ${BOSH_INSTALL_TARGET}/bin/
 popd

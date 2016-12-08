@@ -7,10 +7,10 @@ releases:
     version: latest
 
 instance_groups:
-- name: tmux
+- name: remst
   instances: 1
   jobs:
-  - name: tmux
+  - name: setup
     release: remst
   vm_type: r3.large
   stemcell: trusty

@@ -1,0 +1,13 @@
+# abort script on any command that exits with a non zero value
+set -e -x
+
+tar xzf vim-8.0.0124/vim-8.0.0124.tar.gz
+
+mkdir ${BOSH_INSTALL_TARGET}/bin
+
+pushd vim-8.0.0124
+  ./configure --prefix=${PWD} --with-features=huge --enable-pythoninterp --enable-python3interp
+  make
+  make install
+  cp bin/vim ${BOSH_INSTALL_TARGET}/bin/
+popd

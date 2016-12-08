@@ -1,7 +1,8 @@
 ---
-name: tmux
+name: setup
 templates:
   ctl.erb: bin/ctl
 
 packages:
   - tmux-2.3
+  - vim-8.0.0124

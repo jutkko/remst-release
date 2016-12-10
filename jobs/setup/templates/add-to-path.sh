@@ -29,12 +29,12 @@ add_vim_to_path() {
 
 ensure_tmux_in_login_shell_path() {
   which tmux ||
-  echo "tmux not in PATH"
+  echo "tmux not in PATH" && exit 1
 }
 
 ensure_vim_in_login_shell_path() {
   which vim ||
-  echo "vim not in PATH"
+  echo "vim not in PATH" && exit 1
 }
 
 send_all_output_to_logfile

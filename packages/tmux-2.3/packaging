@@ -19,3 +19,8 @@ pushd tmux-2.3
   make
   cp tmux ${BOSH_INSTALL_TARGET}/bin/
 popd
+
+pushd tmux-conf
+  mkdir ${BOSH_INSTALL_TARGET}/config
+  cp tmux-conf ${BOSH_INSTALL_TARGET}/config/tmux-conf
+popd

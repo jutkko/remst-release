@@ -2,6 +2,7 @@
 
 RUN_DIR=/var/vcap/sys/run/setup
 LOG_DIR=/var/vcap/sys/log/setup
+TMUX_DIR=/var/vcap/packages/tmux-2.3
 PIDFILE=${RUN_DIR}/pid
 
 case $1 in
@@ -10,8 +11,8 @@ case $1 in
     mkdir -p ${RUN_DIR} ${LOG_DIR}
     chown -R vcap:vcap ${RUN_DIR} ${LOG_DIR}
 
-    export PATH=$PATH:/var/vcap/packages/tmux-2.3/bin
-    tmux new -d -s remst
+    export PATH=$PATH:${TMUX_DIR}/bin
+    tmux -f ${TMUX_DIR}/config/tmux-conf new -d -s remst
     echo $(pidof tmux) > ${PIDFILE}
 
     ;;

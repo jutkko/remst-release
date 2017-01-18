@@ -12,7 +12,7 @@ case $1 in
     chown -R vcap:vcap ${RUN_DIR} ${LOG_DIR}
 
     export PATH=$PATH:${TMUX_DIR}/bin
-    tmux -f ${TMUX_DIR}/config/tmux-conf new -d -s remst
+    tmux -vvvv -f ${TMUX_DIR}/config/tmux-conf new -d -s remst
     echo $(pidof tmux) > ${PIDFILE}
 
     ;;

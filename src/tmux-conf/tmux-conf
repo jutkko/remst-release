@@ -1,7 +1,8 @@
-
 # Plugins
-set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @tpm_plugins '        \
+  tmux-plugins/tpm           \
+  tmux-plugins/tmux-sensible \
+'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-run '~/.tmux/plugins/tpm/tpm'
+run '/var/vcap/packages/tmux-2.3/.tmux/plugins/tpm/tpm'

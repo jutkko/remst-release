@@ -94,5 +94,5 @@ set -g base-index 1
 # }}}
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-set-environment -g TMUX_PLUGIN_MANAGER_PATH '/root/.tmux/plugins/'
-run '/root/.tmux/plugins/tpm/tpm'
+set-environment -g TMUX_PLUGIN_MANAGER_PATH '/var/vcap/packages/tmux-2.3/.tmux/plugins/'
+run '/var/vcap/packages/tmux-2.3/.tmux/plugins/tpm/tpm'

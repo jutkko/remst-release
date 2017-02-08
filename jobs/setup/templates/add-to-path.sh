@@ -7,6 +7,9 @@ set -eu
 LOG_DIR=/var/vcap/sys/log/setup
 
 main() {
+  send_all_output_to_logfile
+
+  shell_setup
   add_tmux_to_path
   add_vim_to_path
   add_go_to_path
@@ -23,6 +26,13 @@ main() {
 send_all_output_to_logfile() {
   exec 1> >(tee -a "${LOG_DIR}/add-to-path.log")
   exec 2> >(tee -a "${LOG_DIR}/add-to-path.log")
+}
+
+shell_setup() {
+  printf "export HOME=/root" > /etc/profile.d/add-home-to-path.sh
+  printf "Running bash-it install\n"
+  (export HOME=/root && printf "N\n" | /var/vcap/packages/bash-it/install.sh)
+  hostname remst
 }
 
 add_tmux_to_path() {
@@ -64,5 +74,4 @@ install_copy_pasta() {
   bash -l -c "go get -u github.com/jutkko/copy-pasta"
 }
 
-send_all_output_to_logfile
 main

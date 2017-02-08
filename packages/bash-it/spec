@@ -1,0 +1,7 @@
+---
+name: bash-it
+
+dependencies:
+
+files:
+  - bash-it/**/*

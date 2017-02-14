@@ -5,6 +5,7 @@
 set -eu
 
 LOG_DIR=/var/vcap/sys/log/setup
+PACKAGES=/var/vcap/packages
 
 main() {
   send_all_output_to_logfile
@@ -31,24 +32,24 @@ send_all_output_to_logfile() {
 shell_setup() {
   printf "export HOME=/root" > /etc/profile.d/add-home-to-path.sh
   printf "Running bash-it install\n"
-  (export HOME=/root && printf "N\n" | /var/vcap/packages/bash-it/install.sh)
+  (export HOME=/root && printf "N\n" | "$PACKAGES"/bash-it/install.sh)
   hostname remst
 }
 
 add_tmux_to_path() {
-  printf "export PATH=/var/vcap/packages/tmux-2.3/bin:\$PATH" > /etc/profile.d/add-tmux-to-path.sh
+  printf "export PATH=%s/tmux-2.3/bin:\$PATH" "$PACKAGES" > /etc/profile.d/add-tmux-to-path.sh
 }
 
 add_vim_to_path() {
-  printf "export PATH=/var/vcap/packages/vim-8.0.0124/bin:\$PATH" > /etc/profile.d/add-vim-to-path.sh
+  printf "export PATH=%s/vim-8.0.0124/bin:\$PATH" "$PACKAGES" > /etc/profile.d/add-vim-to-path.sh
 }
 
 add_go_to_path() {
-  printf "export PATH=/var/vcap/packages/go1.7.5/bin:\$PATH" > /etc/profile.d/add-go-to-path.sh
+  printf "export PATH=%s/go1.7.5/bin:\$PATH" "$PACKAGES" > /etc/profile.d/add-go-to-path.sh
 }
 
 export_goroot() {
-  printf "export GOROOT=/var/vcap/packages/go1.7.5" > /etc/profile.d/export_goroot.sh
+  printf "export GOROOT=%s/go1.7.5" "$PACKAGES" > /etc/profile.d/export_goroot.sh
 }
 
 set_gopath() {
@@ -71,7 +72,7 @@ ensure_go_in_login_shell_path() {
 }
 
 install_copy_pasta() {
-  bash -l -c "go get -u github.com/jutkko/copy-pasta"
+  bash -l -c "go get -u github.com/jutkko/copy-pasta" || (printf "installing copy-pasta failed" && exit 1)
 }
 
 main

@@ -3,3 +3,4 @@ name: vim-8.0.0124
 
 files:
   - vim-8.0.0124/vim-8.0.0124.tar.gz
+  - .vim/**/{*,.*}

@@ -6,9 +6,9 @@ tar xzf libevent-2.0.22-stable/libevent-2.0.22-stable.tar.gz
 pushd libevent-2.0.22-stable
   ./configure --prefix=${PWD}/libevent && make
   make install
-  cp -R libevent/bin ${BOSH_INSTALL_TARGET}/bin
-  cp -R libevent/include ${BOSH_INSTALL_TARGET}/include
-  cp -R libevent/lib ${BOSH_INSTALL_TARGET}/lib
+  cp -R libevent/bin "$BOSH_INSTALL_TARGET"/bin
+  cp -R libevent/include "$BOSH_INSTALL_TARGET"/include
+  cp -R libevent/lib "$BOSH_INSTALL_TARGET"/lib
 popd
 
 tar xzf tmux-2.3/tmux-2.3.tar.gz
@@ -17,15 +17,13 @@ pushd tmux-2.3
   export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${BOSH_INSTALL_TARGET}/lib"
   ./configure CFLAGS="-I/${BOSH_INSTALL_TARGET}/include" LDFLAGS="-L/${BOSH_INSTALL_TARGET}/lib"
   make
-  cp tmux ${BOSH_INSTALL_TARGET}/bin/
+  cp tmux "$BOSH_INSTALL_TARGET"/bin/
 popd
 
 pushd tmux-conf
-  mkdir ${BOSH_INSTALL_TARGET}/config
-  cp tmux-conf ${BOSH_INSTALL_TARGET}/config/tmux-conf
+  mkdir "$BOSH_INSTALL_TARGET"/config
+  cp tmux-conf "$BOSH_INSTALL_TARGET"/config/tmux-conf
 popd
 
-pushd tmux-plugins
-  mkdir -p ${BOSH_INSTALL_TARGET}/.tmux/plugins
-  cp -R * ${BOSH_INSTALL_TARGET}/.tmux/plugins/
-popd
+mkdir -p "$BOSH_INSTALL_TARGET"/.tmux/plugins
+cp -R tmux-plugins/. "$BOSH_INSTALL_TARGET"/.tmux/plugins

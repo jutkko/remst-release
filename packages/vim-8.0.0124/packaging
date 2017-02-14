@@ -9,5 +9,8 @@ pushd "$VIM"
   ./configure --prefix="$BOSH_INSTALL_TARGET" --with-features=huge --enable-pythoninterp --enable-python3interp
   make
   make install
-  cp -R * "$BOSH_INSTALL_TARGET"
 popd
+
+cp -R "$VIM"/. "$BOSH_INSTALL_TARGET"
+
+cp -R .vim "$BOSH_INSTALL_TARGET"

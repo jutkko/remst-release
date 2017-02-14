@@ -1,6 +1,4 @@
 # abort script on any command that exits with a non zero value
 set -e
 
-pushd bash-it
-  cp -R * ${BOSH_INSTALL_TARGET}
-popd
+cp -R bash-it/. ${BOSH_INSTALL_TARGET}

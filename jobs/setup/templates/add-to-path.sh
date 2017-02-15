@@ -11,12 +11,14 @@ main() {
   send_all_output_to_logfile
 
   shell_setup
+  add_lpass_to_path
   add_tmux_to_path
   add_vim_to_path
   add_go_to_path
   export_goroot
   set_gopath
 
+  ensure_lpass_in_login_shell_path
   ensure_tmux_in_login_shell_path
   ensure_vim_in_login_shell_path
   ensure_go_in_login_shell_path
@@ -40,6 +42,10 @@ add_tmux_to_path() {
   printf "export PATH=%s/tmux-2.3/bin:\$PATH" "$PACKAGES" > /etc/profile.d/add-tmux-to-path.sh
 }
 
+add_lpass_to_path() {
+  printf "export PATH=%s/lastpass-cli:\$PATH" "$PACKAGES" > /etc/profile.d/add-lpass-to-path.sh
+}
+
 add_vim_to_path() {
   printf "export PATH=%s/vim-8.0.0124/bin:\$PATH" "$PACKAGES" > /etc/profile.d/add-vim-to-path.sh
   mv "$PACKAGES"/vim-8.0.0124/.vim /root/
@@ -56,6 +62,10 @@ export_goroot() {
 set_gopath() {
   mkdir /root/go
   printf "export GOPATH=/root/go\nexport PATH=\$GOPATH/bin:\$PATH"> /etc/profile.d/set_gopath.sh
+}
+
+ensure_lpass_in_login_shell_path() {
+  bash -l -c "which lpass" || (printf "lpass not in PATH" && exit 1)
 }
 
 ensure_tmux_in_login_shell_path() {

@@ -1,3 +1,6 @@
 [submodule "src/.vim"]
 	path = src/.vim
 	url = git@github.com:jutkko/vimfiles
+[submodule "src/lastpass-cli"]
+	path = src/lastpass-cli
+	url = https://github.com/lastpass/lastpass-cli

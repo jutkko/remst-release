@@ -1,0 +1,7 @@
+---
+name: lastpass-cli
+
+dependencies:
+
+files:
+  - lastpass-cli/**/{*,.*}

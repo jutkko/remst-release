@@ -1,0 +1,9 @@
+# abort script on any command that exits with a non zero value
+set -e
+
+pushd lastpass-cli
+  cmake . && make
+  make install
+popd
+
+cp -R lastpass-cli/. ${BOSH_INSTALL_TARGET}

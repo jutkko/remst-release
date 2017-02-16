@@ -20,6 +20,11 @@ bind-key -t vi-copy v begin-selection
 # Start numbering at 1
 set -g base-index 1
 
+bind -n M-h run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)g?(view|n?vim?)(diff)?$' && tmux send-keys C-h) || tmux select-pane -L"
+bind -n M-j run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)g?(view|n?vim?)(diff)?$' && tmux send-keys C-j) || tmux select-pane -D"
+bind -n M-k run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)g?(view|n?vim?)(diff)?$' && tmux send-keys C-k) || tmux select-pane -U"
+bind -n M-l run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)g?(view|n?vim?)(diff)?$' && tmux send-keys C-l) || tmux select-pane -R"
+
 # visuals {{{
   set-option -g visual-activity off
   set-option -g visual-bell off

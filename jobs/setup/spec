@@ -10,5 +10,6 @@ packages:
   - bash-it
   - go1.7.5
   - lastpass-cli
+  - scripts
   - tmux-2.3
   - vim-8.0.0124

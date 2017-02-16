@@ -1,0 +1,23 @@
+#!/bin/bash -e
+
+# set env var DEBUG to 1 to enable debugging
+[ -z "$DEBUG" ] || set -x
+
+# print out usage when something goes wrong
+usage() {
+  echo "usage: setup-copy-pasta"
+}
+
+main() {
+  if [ "$#" -gt 0 ]
+  then
+    usage
+    exit 1
+  fi
+
+  accessKey=$(lpass show "Shared-London Services/rabbitmq/rabbit-copy-pasta-s3" --username)
+  secretAccessKey=$(lpass show "Shared-London Services/rabbitmq/rabbit-copy-pasta-s3" --password)
+  printf "%s\n%s\n" "$accessKey" "$secretAccessKey" | copy-pasta login --target rabbit-home
+}
+
+main "$@"

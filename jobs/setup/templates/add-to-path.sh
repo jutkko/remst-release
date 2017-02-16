@@ -11,6 +11,7 @@ main() {
   send_all_output_to_logfile
 
   shell_setup
+  install_scripts
   add_lpass_to_path
   add_tmux_to_path
   add_vim_to_path
@@ -35,7 +36,13 @@ shell_setup() {
   printf "export HOME=/root" > /etc/profile.d/add-home-to-path.sh
   printf "Running bash-it install\n"
   (export HOME=/root && printf "N\n" | "$PACKAGES"/bash-it/install.sh)
-  hostname remst
+  # TODO this breaks monit, temporary not renaming hostname
+  # hostname remst
+}
+
+install_scripts() {
+  mv "$PACKAGES/scripts" /root/
+  printf "export PATH=/root/scripts:\$PATH" > /etc/profile.d/add-scripts-to-path.sh
 }
 
 add_tmux_to_path() {
@@ -48,7 +55,7 @@ add_lpass_to_path() {
 
 add_vim_to_path() {
   printf "export PATH=%s/vim-8.0.0124/bin:\$PATH" "$PACKAGES" > /etc/profile.d/add-vim-to-path.sh
-  mv "$PACKAGES"/vim-8.0.0124/.vim /root/
+  mv "$PACKAGES/vim-8.0.0124/.vim" /root/
 }
 
 add_go_to_path() {

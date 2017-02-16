@@ -2,6 +2,4 @@
 
 [ -z "$DEBUG" ] || set -x
 
-PATH=/var/vcap/jobs/setup/bin:$PATH
-
-add-to-path
+/var/vcap/jobs/setup/bin/add-to-path

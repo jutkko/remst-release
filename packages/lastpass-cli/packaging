@@ -6,4 +6,4 @@ pushd lastpass-cli
   make install
 popd
 
-cp -R lastpass-cli/. ${BOSH_INSTALL_TARGET}
+cp -R lastpass-cli/. "$BOSH_INSTALL_TARGET"

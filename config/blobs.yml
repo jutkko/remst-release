@@ -1,1 +1,13 @@
---- {}
+---
+go1.7.5/go1.7.5.src.tar.gz:
+  object_id: d5463f42-3355-4e27-9539-b970bfd91867
+  sha: 4a36ad56b11579a8d534817b70a9baf754e5369a
+  size: 14204325
+tmux-2.3/tmux-2.3.tar.gz:
+  object_id: 894e487d-d80c-4084-819c-fb832bbcce33
+  sha: 78c856f6543e02e018730f526687a8444c2d8ab3
+  size: 473944
+vim-8.0.0124/vim-8.0.0124.tar.gz:
+  object_id: b931a957-629f-4656-b778-dfef3ccc4684
+  sha: 05c240f9d1cf2fb6df479fa22253f0bdd8bf4273
+  size: 12948247

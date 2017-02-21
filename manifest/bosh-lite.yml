@@ -3,8 +3,8 @@ name: remst
 director_uuid: 11111111111111111111111111
 
 releases:
-  - name: remst
-    version: latest
+- name: remst
+  version: latest
 
 instance_groups:
 - name: remst

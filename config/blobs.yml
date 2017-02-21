@@ -11,3 +11,11 @@ vim-8.0.0124/vim-8.0.0124.tar.gz:
   object_id: b931a957-629f-4656-b778-dfef3ccc4684
   sha: 05c240f9d1cf2fb6df479fa22253f0bdd8bf4273
   size: 12948247
+go1.7.5/go1.7.5.linux-amd64.tar.gz:
+  object_id: b8b3f474-84b9-46e3-9a87-cf609b2dfe6e
+  sha: 7c6902ce8cd3b9963082d748c50df074e4896796
+  size: 84176916
+libevent-2.0.22-stable/libevent-2.0.22-stable.tar.gz:
+  object_id: 9e9ce531-4f26-424f-81c8-b24486ebb4ff
+  sha: a586882bc93a208318c70fc7077ed8fca9862864
+  size: 854987

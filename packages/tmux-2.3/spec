@@ -4,5 +4,5 @@ name: tmux-2.3
 files:
   - libevent-2.0.22-stable/libevent-2.0.22-stable.tar.gz
   - tmux-2.3/tmux-2.3.tar.gz
-  - tmux-conf/*
+  - tmux-conf/**/{*,.*}
   - tmux-plugins/**/{*,.*}

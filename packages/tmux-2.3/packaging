@@ -20,10 +20,8 @@ pushd tmux-2.3
   cp tmux "$BOSH_INSTALL_TARGET"/bin/
 popd
 
-pushd tmux-conf
-  mkdir "$BOSH_INSTALL_TARGET"/config
-  cp tmux-conf "$BOSH_INSTALL_TARGET"/config/tmux-conf
-popd
+mkdir "$BOSH_INSTALL_TARGET"/config
+cp -R tmux-conf/. "$BOSH_INSTALL_TARGET"/config/
 
 mkdir -p "$BOSH_INSTALL_TARGET"/.tmux/plugins
 cp -R tmux-plugins/. "$BOSH_INSTALL_TARGET"/.tmux/plugins

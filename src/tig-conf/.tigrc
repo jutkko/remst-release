@@ -1,0 +1,3 @@
+bind status p !git push -u
+bind main p !git push -u
+bind status C !git ci

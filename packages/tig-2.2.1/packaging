@@ -1,0 +1,14 @@
+# abort script on any command that exits with a non zero value
+set -e
+
+tar xzf tig-2.2.1/tig-2.2.1.tar.gz
+
+pushd tig-2.2.1
+  make prefix="$BOSH_INSTALL_TARGET"
+  make install prefix="$BOSH_INSTALL_TARGET"
+popd
+
+cp -R tig-2.2.1/. "$BOSH_INSTALL_TARGET"
+
+mkdir "$BOSH_INSTALL_TARGET"/config
+cp -R tig-conf/. "$BOSH_INSTALL_TARGET"/config/

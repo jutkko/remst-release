@@ -1,0 +1,8 @@
+---
+name: tig-2.2.1
+
+dependencies:
+
+files:
+  - tig-2.2.1/**/{*,.*}
+  - tig-conf/**/{*,.*}

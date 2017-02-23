@@ -12,8 +12,10 @@ main() {
 
   shell_setup
   install_scripts
+  install_tigrc
   add_lpass_to_path
   add_tmux_to_path
+  add_tig_to_path
   add_vim_to_path
   add_go_to_path
   export_goroot
@@ -21,6 +23,7 @@ main() {
 
   ensure_lpass_in_login_shell_path
   ensure_tmux_in_login_shell_path
+  ensure_tig_in_login_shell_path
   ensure_vim_in_login_shell_path
   ensure_go_in_login_shell_path
 
@@ -33,11 +36,11 @@ send_all_output_to_logfile() {
 }
 
 shell_setup() {
+  # TODO this breaks monit in the VM, try to fix it
   printf "export HOME=/root" > /etc/profile.d/add-home-to-path.sh
   printf "Running bash-it install\n"
   (export HOME=/root && printf "N\n" | "$PACKAGES"/bash-it/install.sh)
-  # TODO this breaks monit, temporary not renaming hostname
-  # hostname remst
+  hostname remst
 }
 
 install_scripts() {
@@ -45,8 +48,16 @@ install_scripts() {
   printf "export PATH=/root/scripts:\$PATH" > /etc/profile.d/add-scripts-to-path.sh
 }
 
+install_tigrc() {
+  mv "$PACKAGES/tig-2.2.1/config/.tigrc" /root/
+}
+
 add_tmux_to_path() {
   printf "export PATH=%s/tmux-2.3/bin:\$PATH" "$PACKAGES" > /etc/profile.d/add-tmux-to-path.sh
+}
+
+add_tig_to_path() {
+  printf "export PATH=%s/tig-2.2.1/bin:\$PATH" "$PACKAGES" > /etc/profile.d/add-tig-to-path.sh
 }
 
 add_lpass_to_path() {
@@ -77,6 +88,10 @@ ensure_lpass_in_login_shell_path() {
 
 ensure_tmux_in_login_shell_path() {
   bash -l -c "which tmux" || (printf "tmux not in PATH" && exit 1)
+}
+
+ensure_tig_in_login_shell_path() {
+  bash -l -c "which tig" || (printf "tig not in PATH" && exit 1)
 }
 
 ensure_vim_in_login_shell_path() {

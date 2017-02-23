@@ -4,3 +4,6 @@
 [submodule "src/lastpass-cli"]
 	path = src/lastpass-cli
 	url = https://github.com/lastpass/lastpass-cli
+[submodule "src/tmux-conf"]
+	path = src/tmux-conf
+	url = git@github.com:jutkko/tmux-conf

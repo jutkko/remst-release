@@ -19,3 +19,11 @@ libevent-2.0.22-stable/libevent-2.0.22-stable.tar.gz:
   object_id: 9e9ce531-4f26-424f-81c8-b24486ebb4ff
   sha: a586882bc93a208318c70fc7077ed8fca9862864
   size: 854987
+tig-2.2.1/tig-2.2.1.tar.gz:
+  object_id: e3cec61a-37d8-49c8-ac02-cc39c9737bf0
+  sha: 1760778c29284b8a9b4a227787953a37372c6293
+  size: 1028479
+vim-8.0.0360/vim-8.0.0360.tar.gz:
+  object_id: 39063705-2f4d-45f6-badb-b75b4f3363a3
+  sha: d2d4ff6c024c7e8f8950513ec13002c67aeb5da4
+  size: 12994838

@@ -1,0 +1,46 @@
+---
+packages:
+- name: bash-it
+  version: 7ac25921b527614299db709cd4ddbe2eb38c72a5
+  fingerprint: 7ac25921b527614299db709cd4ddbe2eb38c72a5
+  sha1: 5ebbeecb4bbe1361834a4578ff3454783f9558d7
+  dependencies: []
+- name: go1.7.5
+  version: c14d1a9759504f7ed4b8599591d493f409bd05be
+  fingerprint: c14d1a9759504f7ed4b8599591d493f409bd05be
+  sha1: 92ab92a8f7f88f1c37058b80f5af040fb64fe1b5
+  dependencies: []
+- name: lastpass-cli
+  version: 704120a543c4910a331da006b4818395de21e279
+  fingerprint: 704120a543c4910a331da006b4818395de21e279
+  sha1: 5945d33d401278fe5b4d6f54bfe292988a5b7bc1
+  dependencies: []
+- name: scripts
+  version: 88efc68967d9c3e3d412b8ff3650866cffb947d0
+  fingerprint: 88efc68967d9c3e3d412b8ff3650866cffb947d0
+  sha1: f163d0adef11cb32336d7b963cbd77cbfc0091f4
+  dependencies: []
+- name: tig-2.2.1
+  version: 9290d9e95328da12899cbc27a5b67464239191d4
+  fingerprint: 9290d9e95328da12899cbc27a5b67464239191d4
+  sha1: b9e54e2851421b1ccbf9004fbcaa9eb6b3cbaca2
+  dependencies: []
+- name: tmux-2.3
+  version: 36f632393ca548af7bc29edc8ffa8ac9a4fe794b
+  fingerprint: 36f632393ca548af7bc29edc8ffa8ac9a4fe794b
+  sha1: 021bf2a910131a7d85d562e6578cfcc299368400
+  dependencies: []
+- name: vim-8.0.0360
+  version: 4671be64daf432574f686e9a5c4422489fb8378c
+  fingerprint: 4671be64daf432574f686e9a5c4422489fb8378c
+  sha1: 04743bbed509699ed07af45344a0386c66c937ea
+  dependencies: []
+jobs:
+- name: setup
+  version: ab9975c1b31fb431286c731d60f0e29d23597241
+  fingerprint: ab9975c1b31fb431286c731d60f0e29d23597241
+  sha1: c6b92c9d5cae7338dd584b22a52137a73af4d381
+commit_hash: 2c10afd7
+uncommitted_changes: true
+name: remst
+version: 0.0.2

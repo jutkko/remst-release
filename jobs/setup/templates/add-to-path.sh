@@ -12,7 +12,6 @@ main() {
 
   shell_setup
   install_scripts
-  install_tigrc
   add_lpass_to_path
   add_tmux_to_path
   add_tig_to_path
@@ -44,20 +43,19 @@ shell_setup() {
 }
 
 install_scripts() {
-  mv "$PACKAGES/scripts" /root/
   printf "export PATH=/root/scripts:\$PATH" > /etc/profile.d/add-scripts-to-path.sh
-}
-
-install_tigrc() {
-  mv "$PACKAGES/tig-2.2.1/config/.tigrc" /root/
+  mv "$PACKAGES/scripts" /root/
+  mv /root/scripts/.gitconfig /root/
 }
 
 add_tmux_to_path() {
   printf "export PATH=%s/tmux-2.3/bin:\$PATH" "$PACKAGES" > /etc/profile.d/add-tmux-to-path.sh
+  mv "$PACKAGES/tmux-2.3/config/.tmux.conf" /root/
 }
 
 add_tig_to_path() {
   printf "export PATH=%s/tig-2.2.1/bin:\$PATH" "$PACKAGES" > /etc/profile.d/add-tig-to-path.sh
+  mv "$PACKAGES/tig-2.2.1/config/.tigrc" /root/
 }
 
 add_lpass_to_path() {

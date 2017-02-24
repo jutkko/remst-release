@@ -2,7 +2,6 @@
 name: setup
 templates:
   add-to-path.sh: bin/add-to-path
-  ctl.erb: bin/ctl
   post-deploy.sh: bin/post-deploy
   pre-start.sh: bin/pre-start
 

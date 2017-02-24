@@ -1,5 +1,0 @@
-check process setup
-  with pidfile /var/vcap/sys/run/setup/pid
-  start program "/var/vcap/jobs/setup/bin/ctl start"
-  stop program "/var/vcap/jobs/setup/bin/ctl stop"
-  group vcap

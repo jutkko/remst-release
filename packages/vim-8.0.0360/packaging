@@ -1,7 +1,7 @@
 # abort script on any command that exits with a non zero value
 set -e -x
 
-VIM=vim-8.0.0124
+VIM=vim-8.0.0360
 tar xzf "$VIM"/"$VIM".tar.gz
 rm "$VIM"/"$VIM".tar.gz
 

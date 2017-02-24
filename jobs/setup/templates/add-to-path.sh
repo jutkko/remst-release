@@ -63,8 +63,8 @@ add_lpass_to_path() {
 }
 
 add_vim_to_path() {
-  printf "export PATH=%s/vim-8.0.0124/bin:\$PATH" "$PACKAGES" > /etc/profile.d/add-vim-to-path.sh
-  mv "$PACKAGES/vim-8.0.0124/.vim" /root/
+  printf "export PATH=%s/vim-8.0.0360/bin:\$PATH" "$PACKAGES" > /etc/profile.d/add-vim-to-path.sh
+  mv "$PACKAGES/vim-8.0.0360/.vim" /root/
 }
 
 add_go_to_path() {

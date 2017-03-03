@@ -46,6 +46,7 @@ install_scripts() {
   printf "export PATH=/root/scripts:\$PATH" > /etc/profile.d/add-scripts-to-path.sh
   mv "$PACKAGES/scripts" /root/
   mv /root/scripts/.gitconfig /root/
+  mv /root/scripts/.bash_profile /root/
 }
 
 add_tmux_to_path() {

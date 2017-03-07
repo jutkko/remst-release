@@ -17,4 +17,8 @@ manifest
 bosh deployment manifest/remst.yml
 ```
 
+Deploy!
 
+```
+bosh deploy
+```
